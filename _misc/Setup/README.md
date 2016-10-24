@@ -38,16 +38,16 @@ Dart VM version: 1.13.2 (Tue Jan  5 16:03:09 2016) on "linux_x64"
 *Determining the path to previous installation*
 
 ```sh
-droid@droidserver:~$ ls -la /usr/bin/dart
+~$ ls -la /usr/bin/dart
 lrwxrwxrwx 1 root root 20 Jan  5  2016 /usr/bin/dart -> ../lib/dart/bin/dart
-droid@droidserver:~$ ls -la /usr/lib/dart/bin/dart
+~$ ls -la /usr/lib/dart/bin/dart
 -rwxr-xr-x 1 root root 9859832 Jan  5  2016 /usr/lib/dart/bin/dart
 ```
 
 *Pointing to latest Dart binary*
 
 ```sh
-droid@droidserver:~$ sudo update-alternatives --install "/usr/bin/dart" "dart" "/home/droid/software/Dart/dart-1.20.1/dart-sdk/bin/dart" 1
+~$ sudo update-alternatives --install "/usr/bin/dart" "dart" "/home/droid/software/Dart/dart-1.20.1/dart-sdk/bin/dart" 1
 [sudo] password for droid: 
 update-alternatives: using /home/droid/software/Dart/dart-1.20.1/dart-sdk/bin/dart to provide /usr/bin/dart (dart) in auto mode
 ```
@@ -55,7 +55,7 @@ update-alternatives: using /home/droid/software/Dart/dart-1.20.1/dart-sdk/bin/da
 *Removing previous path* ?????
 
 ```sh
-droid@droidserver:~$ sudo update-alternatives --remove "dart" "/usr/lib/dart/bin/dart"
+~$ sudo update-alternatives --remove "dart" "/usr/lib/dart/bin/dart"
 ```
 
 *Verification*
@@ -63,15 +63,15 @@ droid@droidserver:~$ sudo update-alternatives --remove "dart" "/usr/lib/dart/bin
 Verify if *dart* now points to the latest dart installation binary.
 
 ```sh
-droid@droidserver:~$ which dart
+~$ which dart
 /usr/bin/dart
-droid@droidserver:~$ ls -la /usr/bin/dart
+~$ ls -la /usr/bin/dart
 lrwxrwxrwx 1 root root 22 Oct 23 23:27 /usr/bin/dart -> /etc/alternatives/dart
-droid@droidserver:~$ ls -la /etc/alternatives/dart
+~$ ls -la /etc/alternatives/dart
 lrwxrwxrwx 1 root root 55 Oct 23 23:27 /etc/alternatives/dart -> /home/droid/software/Dart/dart-1.20.1/dart-sdk/bin/dart
-droid@droidserver:~$ which dart
+~$ which dart
 /usr/bin/dart
-droid@droidserver:~$ dart --version
+~$ dart --version
 Dart VM version: 1.20.1 (Wed Oct 12 15:07:10 2016) on "linux_x64"
 ```
 
